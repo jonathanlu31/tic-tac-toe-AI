@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TicTacToe</title>
+    <script src="https://kit.fontawesome.com/be956ea42b.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="modal fade text-center" id="gameMode" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="gameModeLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="gameModeLabel">Choose Game Mode</h5>
+          </div>
+          <div class="modal-body">
+            <button type="button" class="btn btn-secondary" data-mode="single">Single Player</button>
+            <button type="button" class="btn btn-primary" data-mode="multi">Two Player</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h1 class="display-2">Tic Tac Toe</h1>
+      <p id="turn"><br /></p>
+    </div>
+    <table class="table table-bordered container">
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-primary mt-3 px-5" id="reset">Reset</button>
+  </body>
+</html>
