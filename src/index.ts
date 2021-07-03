@@ -22,3 +22,5 @@ modal.addEventListener('click', (e) => {
 });
 table.addEventListener('click', (e) => gameDisplay.markTile(e));
 resetButton.addEventListener('click', () => gameDisplay.reset());
+
+// TODO: remove .vscode from git

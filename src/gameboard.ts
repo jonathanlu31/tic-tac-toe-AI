@@ -124,7 +124,7 @@ export default class GameBoard {
           continue;
         }
         this.snapshot[i][j] = 'X';
-        score = this.minimax(0, false);
+        score = this.minimax(0, -Infinity, Infinity, false);
         this.snapshot[i][j] = '';
         if (score > bestScore) {
           bestScore = score;
@@ -135,7 +135,7 @@ export default class GameBoard {
     rows[bestMove.i].cells[bestMove.j].textContent = 'X';
   }
 
-  private minimax(depth: number, isMaximizing: boolean) {
+  private minimax(depth: number, alpha: number, beta: number, isMaximizing: boolean) {
     if (this.checkWin()) {
       if (isMaximizing) {
         return -100 + depth;
@@ -149,6 +149,8 @@ export default class GameBoard {
     let bestScore: number;
     let optimizer: Function;
     let symbol: string;
+    let newAlpha = alpha;
+    let newBeta = beta;
 
     if (isMaximizing) {
       bestScore = -Infinity;
@@ -168,9 +170,18 @@ export default class GameBoard {
           continue;
         }
         this.snapshot[i][j] = symbol;
-        score = this.minimax(depth + 1, !isMaximizing);
+        score = this.minimax(depth + 1, newAlpha, newBeta, !isMaximizing);
         this.snapshot[i][j] = '';
         bestScore = optimizer(bestScore, score);
+
+        if (isMaximizing) {
+          newAlpha = optimizer(newAlpha, score);
+        } else {
+          newBeta = optimizer(newBeta, score);
+        }
+        if (newBeta <= newAlpha) {
+          return bestScore;
+        }
       }
     }
     return bestScore;
