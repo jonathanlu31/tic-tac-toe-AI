@@ -1,7 +1,7 @@
 # Tic-Tac-Toe AI
 
 This is a browser-based tic-tac-toe game with single and two player game modes.
-The single player mode features an unbeatable computer opponent made using the minimax algorithm and alpha-beta pruning for efficiency.
+The single player mode features an unbeatable computer opponent made using the minimax algorithm and alpha-beta pruning.
 
 ### Built With
 
@@ -12,7 +12,8 @@ The single player mode features an unbeatable computer opponent made using the m
 
 ## Usage
 
-Follow the link below and play around!
+Follow the link below and play around! \
+[Tic-tac-toe](https://jonathanlu31.github.io/tic-tac-toe-AI/)
 
 ## Acknowledgments
 
